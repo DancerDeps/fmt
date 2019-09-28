@@ -1,4 +1,4 @@
-<package>
+<package format="2">
   <name>fmt</name>
   <version>5.0.0</version>
   <maintainer email="xxdsox@gmail.com">Yusu Pan</maintainer>
@@ -9,5 +9,5 @@
   <license>custom</license>
   <url>https://github.com/fmtlib/fmt</url>
 
-  <buildtool_depend>catkin</buildtool_depend>
+  <buildtool_depend>ament_cmake</buildtool_depend>
 </package>

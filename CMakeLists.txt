@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.1.0)
+cmake_minimum_required(VERSION 3.5.0)
 
 # Use newer policies if available, up to most recent tested version of CMake.
 if(${CMAKE_VERSION} VERSION_LESS 3.11)
@@ -43,14 +43,8 @@ option(FMT_TEST "Generate the test target." ${MASTER_PROJECT})
 
 project(fmt)
 
-# catkin support
-find_package(catkin REQUIRED)
-catkin_package(
-  INCLUDE_DIRS include
-  LIBRARIES fmt
-#  CATKIN_DEPENDS other_catkin_pkg
-#  DEPENDS system_lib
-)
+# ament support
+find_package(ament_cmake REQUIRED)
 
 # Get version from core.h
 file(READ include/fmt/core.h core_h)
@@ -280,3 +274,5 @@ if (MASTER_PROJECT AND EXISTS ${gitignore})
   set(CPACK_RESOURCE_FILE_README ${PROJECT_SOURCE_DIR}/README.rst)
   include(CPack)
 endif ()
+
+ament_package()
