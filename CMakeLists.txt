@@ -187,6 +187,13 @@ target_include_directories(fmt-header-only INTERFACE
   $<INSTALL_INTERFACE:include>)
 
 # Install targets.
+ament_export_libraries(${PROJECT_NAME})
+install(
+  TARGETS ${PROJECT_NAME}
+  LIBRARY DESTINATION lib
+  ARCHIVE DESTINATION lib
+)
+
 ament_export_include_directories(include)
 install(
   DIRECTORY include/
